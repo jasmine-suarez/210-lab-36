@@ -19,22 +19,38 @@ int main() {
     else
         cout << "File not found.\n";
 
-    // displaying tree in order
-    cout << "Codes in order:\n";
-    tree.displayInOrder();
-    cout << endl;
-
     // menu for user to add, delete, search, and modify records.
     int choice;
     do {
-        cout << "Main Menu\n";
-        cout << "[1] \n";
-        cout << "[2] \n";
-        cout << "[3] \n";
-        cout << "[4] \n";
-        cout << "[5] \n";
-        cout << "[6] \n";
-        cout << "[7] \n";
+        cout << "\nMain Menu\n";
+        cout << "[1] Add record\n";
+        cout << "[2] Delete record\n";
+        cout << "[3] Search for record\n";
+        cout << "[4] Modify Record\n";
+        cout << "[5] Display tree in-order\n";
+        cout << "[0] Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore();
+
+        switch (choice) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5: 
+                break;
+            case 0:
+                cout << "Exiting program.\n";
+                break;
+            default:
+                cout << "Invalid choice. Enter number 0-5.\n";
+                break;
+        }
 
     } while (choice != 0);
 
