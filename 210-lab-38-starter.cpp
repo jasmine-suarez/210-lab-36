@@ -7,47 +7,22 @@ using namespace std;
 int main() {
     StringBinaryTree tree;
 
+    // open file and read code into tree
     ifstream fin;
     fin.open("codes.txt");
     if (fin.good()) {
-        
+        string code;
+        while (fin >> code)
+            tree.insertNode(code);
+        fin.close();
     }
-
-    /*
-    // TEST: inserting strings into tree
-    tree.insertNode("hi");
-    tree.insertNode("my");
-    tree.insertNode("name");
-    tree.insertNode("is");
-    tree.insertNode("jasmine");
-
-    // TEST: displaying tree in order
-    cout << "in order:\n";
-    tree.displayInOrder();
-    cout << endl;
-
-    // TEST: displaying tree pre order
-    cout << "pre order:\n";
-    tree.displayPreOrder();
-    cout << endl;
-
-    // TEST: displaying tree post order
-    cout << "post order:\n";
-    tree.displayPostOrder();
-    cout << endl;
-
-    // TEST: using searchNode
-    cout << "Searching for 'name': ";
-    if (tree.searchNode("name"))
-        cout << "Found" << endl;
     else
-        cout << "Not Found" << endl;
+        cout << "File not found.\n";
 
-    // remove a node
-    tree.remove("is");
-    cout << "removed \"is\"\n";
+    // displaying tree in order
+    cout << "Codes in order:\n";
     tree.displayInOrder();
-    */
+    cout << endl;
 
     return 0;
 }
