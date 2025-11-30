@@ -1,6 +1,10 @@
 // Specification file for the IntBinaryTree class
 #ifndef STRINGBINARYTREE_H
 #define STRINGBINARYTREE_H
+#include <iostream>
+#include <string>
+#include "StringBinaryTree.h"
+using namespace std;
 
 // The StringBinaryTree class manages a binary tree of strings.
 class StringBinaryTree {
@@ -43,10 +47,6 @@ public:
 };
 
 // Implementation file for the StringBinaryTree class
-#include <iostream>
-#include <string>
-#include "StringBinaryTree.h"
-using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
 // The function inserts the node into the tree pointed to by 
@@ -96,7 +96,7 @@ bool StringBinaryTree::searchNode(const string &str) {
    while (nodePtr)    {
       if (nodePtr->value == str)
          return true;
-      else if (num < nodePtr->value)
+      else if (str < nodePtr->value)
          nodePtr = nodePtr->left;
       else
          nodePtr = nodePtr->right;
@@ -106,17 +106,17 @@ bool StringBinaryTree::searchNode(const string &str) {
 
 // remove calls deleteNode to delete the      
 // node whose value member is the same as num.
-void StringBinaryTree::remove(string num) {
-   deleteNode(num, root);
+void StringBinaryTree::remove(const string &str) {
+   deleteNode(str, root);
 }
 
 // deleteNode deletes the node whose value 
 // member is the same as num.              
-void StringBinaryTree::deleteNode(string num, TreeNode *&nodePtr) {
-   if (num < nodePtr->value)
-      deleteNode(num, nodePtr->left);
-   else if (num > nodePtr->value)
-      deleteNode(num, nodePtr->right);
+void StringBinaryTree::deleteNode(const string &str, TreeNode *&nodePtr) {
+   if (str < nodePtr->value)
+      deleteNode(str, nodePtr->left);
+   else if (str > nodePtr->value)
+      deleteNode(str, nodePtr->right);
    else
       makeDeletion(nodePtr);
 }
@@ -187,4 +187,4 @@ void StringBinaryTree::displayPostOrder(TreeNode *nodePtr) const {
    }
 }
 
-#endif // INTBINARYTREE_H
+#endif // STRINGBINARYTREE_H
