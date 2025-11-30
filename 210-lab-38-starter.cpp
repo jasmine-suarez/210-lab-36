@@ -38,13 +38,13 @@ int main() {
 
         switch (choice) {
             case 1:
-                cout << "\nEnter code to add: ";
+                cout << "Enter code to add: ";
                 getline(cin, code);
                 tree.insertNode(code);
                 break;
 
             case 2:
-                cout << "\nEnter code to delete: ";
+                cout << "Enter code to delete: ";
                 getline(cin, code);
                 if (tree.searchNode(code)) {
                     tree.remove(code);
@@ -55,7 +55,7 @@ int main() {
                 break;
 
             case 3:
-                cout << "\nEnter code to search for: ";
+                cout << "Enter code to search for: ";
                 getline(cin, code);
                 if (tree.searchNode(code))
                     cout << "Code " << code << " found.\n";
@@ -76,14 +76,17 @@ int main() {
                     cout << "Code " << code << " not found in tree.\n";
                 break;
 
-                break;
             case 5: 
+                cout << "Displaying tree in-order:\n";
+                tree.displayInOrder();
                 break;
+
             case 0:
-                cout << "\nExiting program.\n";
+                cout << "Exiting program.\n";
                 break;
+
             default:
-                cout << "\nInvalid choice. Enter number 0-5.\n";
+                cout << "Invalid choice. Enter number 0-5.\n";
                 break;
         }
 
