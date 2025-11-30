@@ -20,6 +20,7 @@ int main() {
         cout << "File not found.\n";
 
     string code;
+    string newCode;
 
     // menu for user to add, delete, search, and modify records.
     int choice;
@@ -56,23 +57,33 @@ int main() {
             case 3:
                 cout << "\nEnter code to search for: ";
                 getline(cin, code);
+                if (tree.searchNode(code))
+                    cout << "Code " << code << " found.\n";
+                else 
+                    cout << "Code " << code << " not found in tree.\n";
+                break;
+
+            case 4:
+                cout << "Enter code to modify: ";
+                getline(cin, code);
                 if (tree.searchNode(code)) {
+                    cout << "Enter new value: ";
+                    getline(cin, newCode);
                     tree.remove(code);
-                    cout << "Code " << code << " deleted.\n";
+                    tree.insertNode(newCode);
                 }
                 else 
                     cout << "Code " << code << " not found in tree.\n";
-
                 break;
-            case 4:
+
                 break;
             case 5: 
                 break;
             case 0:
-                cout << "Exiting program.\n";
+                cout << "\nExiting program.\n";
                 break;
             default:
-                cout << "Invalid choice. Enter number 0-5.\n";
+                cout << "\nInvalid choice. Enter number 0-5.\n";
                 break;
         }
 
