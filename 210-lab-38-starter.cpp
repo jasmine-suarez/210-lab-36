@@ -1,11 +1,19 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "StringBinaryTree.h"
 using namespace std;
 
 int main() {
     StringBinaryTree tree;
 
+    ifstream fin;
+    fin.open("codes.txt");
+    if (fin.good()) {
+        
+    }
+
+    /*
     // TEST: inserting strings into tree
     tree.insertNode("hi");
     tree.insertNode("my");
@@ -39,6 +47,7 @@ int main() {
     tree.remove("is");
     cout << "removed \"is\"\n";
     tree.displayInOrder();
+    */
 
     return 0;
 }
